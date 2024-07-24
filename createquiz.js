@@ -1,6 +1,6 @@
 import { addQuestions, saveQuiz, newQuiz } from "./savequiz.js";
 import { previewQuiz, renderSavedQuizzes } from "./preview.js";
-import { navigate } from './router.js'; // Imported navigate
+import { navigate } from './router.js'; 
 
 export function renderQuizGenerator() {
   const quizTemp = `<header>
