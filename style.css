@@ -333,6 +333,15 @@ header{
   margin: 8% auto;
   display: none;
   color: red;
+  position: relative;
+}
+#retryBtn{
+  position: absolute;
+  bottom: 30px;
+  padding: 5px 28px;
+  border: none;
+  background-color: #4f0546;
+  color: white;
 }
 @media (max-width: 480px) {
   .center-head{

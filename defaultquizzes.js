@@ -1,4 +1,4 @@
-export function addDefaultQuizzes() {
+export function addDefaultQuizzes(){
   const defaultQuizzes = [
     {
       title: "HTML Quiz",
@@ -105,7 +105,7 @@ export function addDefaultQuizzes() {
   ];
 
   const savedQuizzes = JSON.parse(localStorage.getItem("savedQuizzes")) || [];
-
+//   console.log(savedQuizzes);
   if (savedQuizzes.length === 0) {
     localStorage.setItem("savedQuizzes", JSON.stringify(defaultQuizzes));
   }

@@ -137,6 +137,7 @@ function attemptQuiz(quizIndex) {
   attemptContent += `</div><button id="submitQuizBtn">Submit Quiz</button></div>
             <div id="quizScore" class="animate__animated animate__rubberBand">
               <h2 class="animate__animated animate__bounce">Your Score: <span id="scoreValue"></span></h2>
+              <button id='retryBtn'>Retry</button>
           </div>
 `;
 
@@ -145,6 +146,10 @@ function attemptQuiz(quizIndex) {
   document.getElementById("submitQuizBtn").addEventListener("click", function () {
       // console.log('clicked');
       calculateScore(selectedQuiz)
+    });
+    document.getElementById("retryBtn").addEventListener("click", function () {
+      // console.log('clicked');
+     navigate('/templates')
     });
 
     document.getElementById('templatesBtn').addEventListener('click', renderSavedQuizzes);
