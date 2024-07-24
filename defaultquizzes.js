@@ -108,8 +108,5 @@ export function addDefaultQuizzes() {
 
   if (savedQuizzes.length === 0) {
     localStorage.setItem("savedQuizzes", JSON.stringify(defaultQuizzes));
-  }else{
-    localStorage.setItem("savedQuizzes", JSON.stringify(defaultQuizzes));
-
   }
 }
