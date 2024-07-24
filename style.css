@@ -364,6 +364,10 @@ header{
   .saved-quizzes{
     display: block;
   }
+  #quizScore{
+    width: 80vw;
+    height: 40vh;
+  }
 }
 
 
