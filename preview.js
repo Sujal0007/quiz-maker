@@ -1,4 +1,6 @@
 import { showModal } from "./savequiz.js";
+import { navigate } from './router.js'; 
+
 
 export function previewQuiz() {
   const savedQuizzes = JSON.parse(localStorage.getItem("savedQuizzes")) || [];
@@ -35,44 +37,40 @@ export function previewQuiz() {
 
 export function renderSavedQuizzes() {
   let savedQuizzes = JSON.parse(localStorage.getItem("savedQuizzes")) || [];
-  // console.log(savedQuizzes);
   const appDiv = document.getElementById("app");
 
   if (savedQuizzes.length === 0) {
     showModal("No quiz present");
   }
 
-  let quizzesHtml = `
-      <header>
-          <div class="left-head">
-              <img src="https://cdn.prod.website-files.com/60aca2b71ab9a5e4ececf1cf/62fa6419161d3a641f681ceb_Logo.svg"  alt="Quizizz Logo" class="logo-image">
-          </div>
-          <div class="center-head">
-              <ul>
-                  <li id="homeBtn">Home</li>
-                  <li id="templatesBtn">Templates</li>
-                  <li>About</li>
-                  <li>Contact us</li>
-              </ul>
-          </div>
-          <div class="right-head">
-              <button class="login-btn">Login</button>
-              <button class="sign-btn">Sign up</button>
-          </div>
-      </header>
-      <div class="saved-quizzes">
-          <h1>Attempt Quizzes</h1>
-          <ul>
-  `;
+  let quizzesHtml = `<header>
+    <div class="left-head">
+      <img src="https://cdn.prod.website-files.com/60aca2b71ab9a5e4ececf1cf/62fa6419161d3a641f681ceb_Logo.svg" alt="Quizizz Logo" class="logo-image">
+    </div>
+    <div class="center-head">
+      <ul>
+        <li id="homeBtn">Home</li>
+        <li id="templatesBtn">Templates</li>
+        <li>About</li>
+        <li>Contact us</li>
+      </ul>
+    </div>
+    <div class="right-head">
+      <button class="login-btn">Login</button>
+      <button class="sign-btn">Sign up</button>
+    </div>
+  </header>
+  <div class="saved-quizzes">
+    <h1>Attempt Quizzes</h1>
+    <ul>`;
 
   savedQuizzes.forEach((quiz, index) => {
     quizzesHtml += `<li data-index="${index}"><span>${quiz.title}</span>
-    <button class="delete-btn" data-index="${index}"><i class="fa-solid fa-trash"></i></button>
-</li>`;
+      <button class="delete-btn" data-index="${index}"><i class="fa-solid fa-trash"></i></button>
+    </li>`;
   });
 
   quizzesHtml += `</ul></div>`;
-
   appDiv.innerHTML = quizzesHtml;
 
   document.querySelectorAll(".saved-quizzes li").forEach((li) => {
@@ -90,9 +88,14 @@ export function renderSavedQuizzes() {
     });
   });
 
-  
-
+  document.getElementById('homeBtn').addEventListener('click', function() {
+    navigate('/');
+  });
+  document.getElementById('templatesBtn').addEventListener('click', function() {
+    navigate('/templates'); 
+  });
 }
+
 
 function attemptQuiz(quizIndex) {
   const savedQuizzes = JSON.parse(localStorage.getItem("savedQuizzes")) || [];
