@@ -23,6 +23,7 @@ export function renderLandingPage() {
       <h1>Free online <span>quiz maker</span></h1>
       <p>Make a quiz with different question types to engage students in a classroom, train employees at work, or play trivia with friends.</p>
       <button class="create-btn" id='createBtn'>Create a quiz <i class="fa-solid fa-angle-right"></i></button>
+      <button class="temp-btn" id='tempBtn'>Existing Quizzes<i class="fa-solid fa-angle-right"></i></button>
       <p><i class="fa-solid fa-check"></i> Used by 50 million+ people around the world</p>
     </div>
   </div>`;
@@ -33,6 +34,9 @@ export function renderLandingPage() {
     navigate('/create'); 
   });
   document.getElementById('templatesBtn').addEventListener('click', function() {
+    navigate('/templates'); 
+  });
+  document.getElementById('tempBtn').addEventListener('click', function() {
     navigate('/templates'); 
   });
   document.getElementById('homeBtn').addEventListener('click', function() {

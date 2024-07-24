@@ -1,7 +1,6 @@
 import { showModal } from "./savequiz.js";
 import { navigate } from './router.js'; 
 
-
 export function previewQuiz() {
   const savedQuizzes = JSON.parse(localStorage.getItem("savedQuizzes")) || [];
   // console.log(savedQuizzes)

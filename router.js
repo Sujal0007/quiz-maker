@@ -1,9 +1,10 @@
-import { renderLandingPage, renderQuizGenerator, renderSavedQuizzes } from './main.js'; // Imported render functions
+import { renderLandingPage, renderQuizGenerator, renderSavedQuizzes ,previewQuiz } from './main.js'; 
 
 const routes = {
-  '/': renderLandingPage, // Defined route for landing page
-  '/templates': renderSavedQuizzes, // Defined route for saved quizzes
-  '/create': renderQuizGenerator // Defined route for quiz generator
+  '/': renderLandingPage,
+  '/templates': renderSavedQuizzes,
+  '/create': renderQuizGenerator ,
+  '/preview': previewQuiz
 };
 
 function getRoute() {
@@ -12,15 +13,15 @@ function getRoute() {
 }
 
 export function navigate(path) {
-  history.pushState({}, "", path); // Created navigate function
+  history.pushState({}, "", path); 
   router();
 }
 
 export function router() {
   const { path } = getRoute();
-  const route = routes[path] || renderLandingPage; // Created router function
+  const route = routes[path] || renderLandingPage; 
   route();
 }
 
-window.addEventListener('popstate', router); // Set up popstate event listener
+window.addEventListener('popstate', router); 
 

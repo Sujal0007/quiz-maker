@@ -24,6 +24,9 @@ header{
   font-weight: 800;
   font-size: 1rem;
 }
+.center-head ul li:hover{
+  cursor: pointer;
+}
 .login-btn{
   background-color: #f7d6f4;
   color: #5d2057;
@@ -75,7 +78,7 @@ header{
   color: #6124f1;
   font-size: 2rem;
 }
-.create-btn{
+.create-btn , .temp-btn{
     color: #5d2057;
     background-color: #f2f2f2;
     border-radius: 8px;
@@ -86,7 +89,7 @@ header{
     border: none;
     font-size: 1rem;
 }
-.create-btn:hover{
+.create-btn:hover , .temp-btn:hover{
   cursor: pointer;
   box-shadow: none;
   transition: 0.5s;
@@ -330,6 +333,28 @@ header{
   margin: 8% auto;
   display: none;
   color: red;
+}
+@media (max-width: 480px) {
+  .center-head{
+    display: none;
+  }
+  .quiz-maker{
+    margin-top: 5rem;
+  }
+  .quiz-cont{
+    padding: 1rem;
+  }
+  .saved-quizzes li{
+    height: 10vh;
+    width: 90vw;
+    display: block;
+  }
+  .saved-quizzes h1{
+    display: block;
+  }
+  .saved-quizzes{
+    display: block;
+  }
 }
 
 

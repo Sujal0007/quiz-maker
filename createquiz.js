@@ -1,5 +1,4 @@
 import { addQuestions, saveQuiz, newQuiz } from "./savequiz.js";
-import { previewQuiz, renderSavedQuizzes } from "./preview.js";
 import { navigate } from './router.js'; 
 
 export function renderQuizGenerator() {
@@ -44,7 +43,9 @@ export function renderQuizGenerator() {
 
   document.getElementById('addQuestionBtn').addEventListener('click', addQuestions);
   document.getElementById('saveBtn').addEventListener('click', saveQuiz);
-  document.getElementById('previewBtn').addEventListener('click', previewQuiz);
+  document.getElementById('previewBtn').addEventListener('click', function(){
+    navigate('/preview');
+  });
   document.getElementById('templatesBtn').addEventListener('click', function() {
     navigate('/templates');
   });
