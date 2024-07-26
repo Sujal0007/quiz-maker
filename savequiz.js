@@ -66,11 +66,16 @@ export function saveQuiz() {
     saveToLocalStorage();
     showModal("Quiz saved successfully");
   } else {
-    showModal("Please fill all fields and select a correct option");
+    showModal("Please fill all fields , check if enter duplicate options and select a correct option");
   }
 }
 
 function validateQuiz() {
+  const quizTitle = document.getElementById("quizTitle").value.trim();
+  if (!quizTitle) {
+    return false;
+  }
+
   const questions = document.querySelectorAll(".question");
 
   for (let i = 0; i < questions.length; i++) {
@@ -80,10 +85,13 @@ function validateQuiz() {
     }
 
     const optionInputs = questions[i].querySelectorAll(".option-input");
+    const optionValues = [];
     for (let j = 0; j < optionInputs.length; j++) {
-      if (!optionInputs[j].value.trim()) {
+      const optionValue = optionInputs[j].value.trim();
+      if (!optionValue || optionValues.includes(optionValue)) {
         return false;
       }
+      optionValues.push(optionValue);
     }
 
     const correctInput = questions[i].querySelector(".correct-input:checked");

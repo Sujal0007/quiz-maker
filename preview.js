@@ -59,9 +59,9 @@ export function renderSavedQuizzes() {
       <button class="sign-btn">Sign up</button>
     </div>
   </header>
+  <h1 class='saved-head'>Attempt Quizzes</h1>
   <div class="saved-quizzes">
-    <h1>Attempt Quizzes</h1>
-    <ul>`;
+     <ul>`;
 
   savedQuizzes.forEach((quiz, index) => {
     quizzesHtml += `<li data-index="${index}"><span>${quiz.title}</span>
