@@ -1,5 +1,6 @@
 import { showModal } from "./savequiz.js";
 import { navigate } from './router.js'; 
+import { shareViaAPI } from "./landpage.js";
 
 export function previewQuiz() {
   const savedQuizzes = JSON.parse(localStorage.getItem("savedQuizzes")) || [];
@@ -44,14 +45,14 @@ export function renderSavedQuizzes() {
 
   let quizzesHtml = `<header>
     <div class="left-head">
-      <img src="https://cdn.prod.website-files.com/60aca2b71ab9a5e4ececf1cf/62fa6419161d3a641f681ceb_Logo.svg" alt="Quizizz Logo" class="logo-image">
+      <img id='logo' src="https://cdn.prod.website-files.com/60aca2b71ab9a5e4ececf1cf/62fa6419161d3a641f681ceb_Logo.svg" alt="Quizizz Logo" class="logo-image">
     </div>
     <div class="center-head">
       <ul>
         <li id="homeBtn">Home</li>
         <li id="templatesBtn">Templates</li>
         <li>About</li>
-        <li>Contact us</li>
+        <li id='share'>Share</li>
       </ul>
     </div>
     <div class="right-head">
@@ -93,6 +94,12 @@ export function renderSavedQuizzes() {
   document.getElementById('templatesBtn').addEventListener('click', function() {
     navigate('/templates'); 
   });
+  document.getElementById('logo').addEventListener('click', function() {
+    navigate('/'); 
+  });
+  document.getElementById('share').addEventListener('click' , function(){
+    shareViaAPI();
+  })
 }
 
 
@@ -105,14 +112,14 @@ function attemptQuiz(quizIndex) {
   let attemptContent = `
         <header>
           <div class="left-head">
-              <img src="https://cdn.prod.website-files.com/60aca2b71ab9a5e4ececf1cf/62fa6419161d3a641f681ceb_Logo.svg" alt="Quizizz Logo" class="logo-image">
+              <img id='logo' src="https://cdn.prod.website-files.com/60aca2b71ab9a5e4ececf1cf/62fa6419161d3a641f681ceb_Logo.svg" alt="Quizizz Logo" class="logo-image">
           </div>
           <div class="center-head">
               <ul>
                   <li id="homeBtn">Home</li>
                   <li id="templatesBtn">Templates</li>
                   <li>About</li>
-                  <li>Contact us</li>
+                  <li id='share'>Share</li>
               </ul>
           </div>
           <div class="right-head">
@@ -151,6 +158,13 @@ function attemptQuiz(quizIndex) {
       // console.log('clicked');
      navigate('/templates')
     });
+
+    document.getElementById('logo').addEventListener('click', function() {
+      navigate('/'); 
+    });
+    document.getElementById('share').addEventListener('click' , function(){
+      shareViaAPI();
+    })
 
     document.getElementById('templatesBtn').addEventListener('click', renderSavedQuizzes);
 
