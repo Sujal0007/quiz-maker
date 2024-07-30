@@ -354,85 +354,85 @@ header{
   color: white;
 }
 .footer {
-  background-color: #282c34;
-  color: #fff;
-  padding: 20px 0;
-  position: relative;
-  bottom: 0;
-  width: 100%;
+    background-color: #282c34;
+    color: #fff;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
 .footer-container {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  max-width: 1200px;
-  margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .footer-section {
-  flex: 1;
-  padding: 20px;
-  min-width: 200px;
+    flex: 1;
+    padding: 20px;
+    min-width: 200px;
 }
 
 .footer-section h4 {
-  font-size: 18px;
-  margin-bottom: 10px;
-  text-transform: uppercase;
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
 }
 
 .footer-section ul {
-  list-style: none;
-  padding: 0;
+    list-style: none;
+    padding: 0;
 }
 
 .footer-section ul li {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .footer-section ul li a {
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.3s ease;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .footer-section ul li a:hover {
-  color: #50b3a2;
+    color: #50b3a2;
 }
 
 .social-icons {
-  display: flex;
-  justify-content: flex-start;
+    display: flex;
+    justify-content: flex-start;
 }
 
 .social-icon {
-  margin-right: 10px;
-  color: #fff;
-  transition: color 0.3s ease;
+    margin-right: 10px;
+    color: #fff;
+    transition: color 0.3s ease;
 }
 
 .social-icon:hover {
-  color: #50b3a2;
+    color: #50b3a2;
 }
 
 .app-icons a {
-  margin-right: 10px;
+    margin-right: 10px;
 }
 
 .app-icons img {
-  width: 135px;
-  height: auto;
+    width: 135px;
+    height: auto;
 }
 
 .footer-bottom {
-  text-align: center;
-  margin-top: 20px;
+    text-align: center;
+    margin-top: 20px;
 }
 
 .footer-bottom p {
-  margin: 0;
-  font-size: 14px;
+    margin: 0;
+    font-size: 14px;
 }
 @media (max-width: 480px) {
   .center-head{
@@ -458,6 +458,10 @@ header{
   #quizScore{
     width: 80vw;
     height: 40vh;
+  }
+  .footer{
+    top: 50px;
+    bottom:0;
   }
 }
 

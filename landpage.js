@@ -88,16 +88,14 @@ export function renderLandingPage() {
 }
 
 export function shareViaAPI(){
-  console.log('inside api');
+  // console.log('inside api');
   const shareData = {
     title: "QUIZ",
     text: "Quiz Maker APP",
     url: "https://quizzmaker.netlify.app/",
   };
   
-  console.log(shareData);
-  // Share must be triggered by "user activation"
-  debugger 
+  // console.log(shareData); 
   (async () => {
     try {
 
